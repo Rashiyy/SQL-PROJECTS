@@ -1,0 +1,18 @@
+--Project 6 (Top Performing Ads)
+
+CREATE TABLE PerformingAds(Adid INT,VIEWS INT,Clicks INT,COST DECIMAL(10,2));
+INSERT INTO PerformingAds(Adid,VIEWS,Clicks,COST) VALUES
+(1,1000,50,20.5),
+(2,800,30,15.2),
+(3,1200,80,25.7),
+(4,600,20,10.9),
+(5,1500,120,40.3);
+
+SELECT * FROM PerformingAds
+
+ALTER TABLE PerformingAds
+ALTER VIEWS TYPE NUMERIC
+ALTER TABLE PerformingAds
+ALTER Clicks TYPE NUMERIC
+
+SELECT Adid,to_char((Clicks/VIEWS)*100 ,'FM999.00' || '%') AS CTR,VIEWS,Clicks,COST FROM PerformingAds ORDER  BY CTR DESC;

@@ -1,0 +1,12 @@
+--Project 8 (Fixing NAMES IN TABLE)
+
+CREATE TABLE NAMES(NAME VARCHAR(30));
+INSERT INTO NAMES(NAME) VALUES
+('rAVI kUMAR'),
+('priya sharma'),
+('amit PATEL'),
+('NEHA gupta');
+
+SELECT * FROM NAMES;
+
+SELECT initcap(NAME) AS NAME FROM NAMES;
